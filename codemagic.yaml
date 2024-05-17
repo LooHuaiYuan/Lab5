@@ -1,0 +1,26 @@
+workflows:
+  android workflow:
+    name: Android workflow
+    instance_type: mac_mini_m1
+    max_build_duration: 30
+    environment:
+      flutter: stable
+      xcode: latest
+      cocoapods: default
+      vars:
+        FIREBASE_PROJECT: "flutter-explained-ci-cd-d7a15"
+    scripts:
+      - name: Get Flutter packages
+        script: |
+          flutter packages pub get
+      - name: Build APK with Flutter
+        script: |
+          flutter build apk --debug
+      - name: Create debug and test APK
+        script: |
+          set -ex
+          cd android
+          ./gradlew app:assembleAndroidTest
+          ./gradlew app:assembleDebug -Ptarget="$CM_BUILD_DIR/integration_test/app_test_dart"
+      - name: Run Firebase Test Lab Tests
+        script:

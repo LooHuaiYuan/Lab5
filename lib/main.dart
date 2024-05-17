@@ -111,6 +111,7 @@ class _MyAppState extends State<MyApp> {
                                 SizedBox(width: width*0.048,),
                                 Expanded(
                                   child: TextField(
+                                    key: Key("email"),
                                     controller: phone,
                                   style: TextStyle(fontSize: width*0.035),
                                   decoration: InputDecoration(
@@ -145,6 +146,7 @@ class _MyAppState extends State<MyApp> {
                             ),
                             SizedBox(height: width*0.02,),
                             GestureDetector(
+                              key: Key("activate"),
                               onTap: (){
                                 setState(() {
                                   if(checkbox && phone.text.isNotEmpty) {
@@ -218,6 +220,7 @@ class _MyAppState extends State<MyApp> {
                             ),
                             SizedBox(height: height*0.06,),
                             TextField(
+                              key: Key("otp"),
                               style: TextStyle(fontSize: width*0.035),
                               textAlign: TextAlign.center,
                               controller: otp,
@@ -259,6 +262,7 @@ class _MyAppState extends State<MyApp> {
                             ),
                             SizedBox(height: height*0.012,),
                             GestureDetector(
+                              key: Key("otpButton"),
                               onTap: (){
                                 if(otp.text.isNotEmpty){
                                   Navigator.of(context).push(

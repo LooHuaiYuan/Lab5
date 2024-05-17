@@ -81,22 +81,32 @@ class _PersonState extends State<Person> {
               padding: EdgeInsets.all(width*0.039),
               child: Align(
                 alignment: Alignment.bottomRight,
-                child: ElevatedButton(
-                  onPressed: (){
+                child: GestureDetector(
+                  key: Key("addButton"),
+                  onTap: (){
                     Navigator.of(context).push(
                         MaterialPageRoute(
                           builder:(context)=>
                               Invitation(factoryNumber: widget.factoryNumber,),));
                   },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Color.fromRGBO(233, 221, 254, 1),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20), // Adjust border radius to match the container's border radius
+                  child: Container(
+                    width: width * 0.15,
+                    height: height * 0.075,
+                    decoration: BoxDecoration(
+                        color: Color.fromRGBO(233, 221, 254, 1),
+                        borderRadius: BorderRadius.circular(20), // Adjust border radius to match the container's border radius
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.5), // Shadow color
+                            spreadRadius: 5, // Spread radius
+                            blurRadius: 7, // Blur radius
+                            offset: Offset(0, 3), // Offset
+                          ),
+                        ],
                     ),
-                    shadowColor: Colors.black,
-                    elevation: 8.0
+                    child: Center(child: Text('+', style: TextStyle(fontSize: width*0.08),)),
                   ),
-                  child: Text('+', style: TextStyle(fontSize: width*0.08),),
+
                 ),
               ),
             ),

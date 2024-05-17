@@ -43,6 +43,7 @@ class Invitation extends StatelessWidget {
                 Container(
                   height: height*0.1,
                     child: TextField(
+                      key: Key("name"),
                       style: TextStyle(fontSize: width*0.04),
                       controller: name,
                       decoration: InputDecoration(
@@ -69,6 +70,7 @@ class Invitation extends StatelessWidget {
                     SizedBox(width: width*0.048,),
                     Expanded(child:
                     TextField(
+                      key: Key("phone"),
                       style: TextStyle(fontSize: width*0.036),
                       controller: phone,
                       decoration: InputDecoration(
@@ -87,6 +89,7 @@ class Invitation extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.all(width*0.019),
                   child: GestureDetector(
+                    key: Key("Submit"),
                     onTap: (){
                       context.read<HomeProvider>().addPhone(factoryNumber, name.text, phone.text);
                       Navigator.of(context).pop(

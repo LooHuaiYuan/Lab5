@@ -63,6 +63,7 @@ class _ApplicationState extends State<Application> {
                         width: width*0.036,
                       ),
                       GestureDetector(
+                        key: Key("factory1"),
                         child: Container(
                           width: width*0.425,
                           height: height*0.18,
@@ -110,6 +111,7 @@ class _ApplicationState extends State<Application> {
                         width: width*0.073,
                       ),
                       GestureDetector(
+                        key: Key("factory2"),
                         child: Container(
                           width: width*0.425,
                           height: height*0.18,
@@ -157,6 +159,7 @@ class _ApplicationState extends State<Application> {
                         width: width*0.073,
                       ),
                       GestureDetector(
+                        key: Key("factory3"),
                         child: Container(
                           width: width*0.426,
                           height: height*0.18,
