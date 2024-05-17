@@ -42,10 +42,11 @@ void main(){
       await tester.tap(otpButton);
       await tester.pumpAndSettle();
 
-      // await tester.tap(add);
-      // await tester.enterText(nameFormField, "Alex");
-      // await tester.enterText(phoneFormField, "1110432199");
-      // await tester.tap(submit);
+      await tester.tap(add);
+      expect(actual, matcher)
+      await tester.enterText(nameFormField, "Alex");
+      await tester.enterText(phoneFormField, "1110432199");
+      await tester.tap(submit);
 
       await tester.tap(setting);
       await tester.pumpAndSettle();
