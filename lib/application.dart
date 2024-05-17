@@ -44,6 +44,7 @@ class _ApplicationState extends State<Application> {
       ),
       backgroundColor: Color.fromRGBO(213, 214, 214, 1),
       body: SingleChildScrollView(
+        key: Key("factory"),
         child: Container(
           decoration: BoxDecoration(color: Color.fromRGBO(213, 214, 214, 1)),
           child: Column(

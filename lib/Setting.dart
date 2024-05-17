@@ -59,7 +59,9 @@ class _SettingState extends State<Setting> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
-                          IconButton(onPressed: (){
+                          IconButton(
+                            key:Key("edit"),
+                              onPressed: (){
                             setState(() {
                               enable = !enable;
                             });
@@ -106,6 +108,7 @@ class _SettingState extends State<Setting> {
                                     Container(
                                       width: width*0.19,
                                         child: TextField(
+                                          key: Key("Pressure"),
                                           textAlign: TextAlign.center,
                                           controller: steamPressureTF,
                                           enabled: enable,

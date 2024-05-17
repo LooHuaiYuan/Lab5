@@ -27,8 +27,12 @@ void main(){
       final submit = find.byKey(Key("submit"));
 
       final home = find.byIcon(Icons.home_outlined);
-      final setting = find.byIcon(Icons.settings).last;
 
+      final setting = find.byIcon(Icons.settings).last;
+      final edit = find.byKey(Key("edit"));
+      final pressure = find.byKey(Key("pressure"));
+
+      final factory = find.byKey(Key("factory"));
       final factory1 = find.byKey(Key("factory1"));
       final factory2 = find.byKey(Key("factory2"));
       final factory3 = find.byKey(Key("factory3"));
@@ -42,17 +46,12 @@ void main(){
       await tester.tap(otpButton);
       await tester.pumpAndSettle();
 
-      await tester.tap(add);
-      expect(actual, matcher)
-      await tester.enterText(nameFormField, "Alex");
-      await tester.enterText(phoneFormField, "1110432199");
-      await tester.tap(submit);
-
       await tester.tap(setting);
-      await tester.pumpAndSettle();
-      await tester.tap(factory2);
-      await tester.pumpAndSettle();
-      await tester.tap(factory1);
+      await tester.tap(edit);
+      await tester.enterText(pressure, "32.54");
+      await tester.tap(edit);
+      await tester.drag(factory, Offset(300, 0));
+      await tester.tap(factory3);
       await tester.pumpAndSettle();
 
       await tester.tap(home);
@@ -62,6 +61,11 @@ void main(){
       await tester.tap(factory1);
       await tester.pumpAndSettle();
 
+      await tester.tap(add);
+      expect(add, findsOneWidget);
+      await tester.enterText(nameFormField, "Alex");
+      await tester.enterText(phoneFormField, "1110432199");
+      await tester.tap(submit);
 
     });
   });
