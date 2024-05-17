@@ -23,13 +23,13 @@ workflows:
           set -ex
           cd android
           ./gradlew app:assembleAndroidTest
-          ./gradlew app:assembleDebug -Ptarget="$CM_BUILD_DIR/integration_test/app_test_dart"
+          ./gradlew app:assembleDebug -Ptarget="$CM_BUILD_DIR/integration_test/app_test.dart"
       - name: Run Firebase Test Lab Tests
         script: |
           set -ex
           echo $GCLOUD_KEY_FILE | BASE64 --decode > ./gcloud_key_file.json
           gcloud auth activate-service-account --key-file=gcloud_key_file.json
-          gcloud --quite config set project $FIREBASE_PROJECT
+          gcloud --quiet config set project $FIREBASE_PROJECT
           
           gcloud firebase test android run \
             --type instrumentation \
