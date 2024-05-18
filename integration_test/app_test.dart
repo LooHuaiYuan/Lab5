@@ -45,6 +45,7 @@ void main(){
       await tester.tap(otpButton);
       await tester.pumpAndSettle();
 
+      await tester.tapAt(Offset(0, 0));
       await tester.tap(home);
       await tester.pumpAndSettle();
       await tester.tap(factory2);
