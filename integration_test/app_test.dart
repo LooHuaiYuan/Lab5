@@ -24,20 +24,19 @@ void main(){
       final add = find.byKey(Key("addButton"));
       final nameFormField = find.byKey(Key("name"));
       final phoneFormField = find.byKey(Key("phone"));
-      final submit = find.byKey(Key("submit"));
+      final submit = find.byKey(Key("Submit"));
 
       final home = find.byIcon(Icons.home_outlined);
 
-      final setting = find.byIcon(Icons.settings).last;
+      final setting = find.byIcon(Icons.settings).first;
       final edit = find.byKey(Key("edit"));
-      final pressure = find.byKey(Key("pressure"));
+      final pressure = find.byKey(Key("Pressure"));
 
       final factory = find.byKey(Key("factory"));
       final factory1 = find.byKey(Key("factory1"));
       final factory2 = find.byKey(Key("factory2"));
-      final factory3 = find.byKey(Key("factory3"));
 
-      await tester.enterText(emailFormField, "loohuaiyuan@gmial.com");
+      await tester.enterText(emailFormField, "loohuaiyuan@gmail.com");
       await tester.tap(agree);
       await tester.tap(activateButton);
       await tester.pumpAndSettle();
@@ -46,26 +45,40 @@ void main(){
       await tester.tap(otpButton);
       await tester.pumpAndSettle();
 
-      await tester.tap(setting);
-      await tester.tap(edit);
-      await tester.enterText(pressure, "32.54");
-      await tester.tap(edit);
-      await tester.drag(factory, Offset(300, 0));
-      await tester.tap(factory3);
-      await tester.pumpAndSettle();
-
       await tester.tap(home);
       await tester.pumpAndSettle();
       await tester.tap(factory2);
       await tester.pumpAndSettle();
-      await tester.tap(factory1);
-      await tester.pumpAndSettle();
+      await Future.delayed(Duration(seconds: 2));
+      final factory3 = find.byKey(Key("factory3"));
+      await tester.drag(factory, Offset(300, 0));
+      await tester.tap(factory3);
 
-      await tester.tap(add);
+      await Future.delayed(Duration(seconds: 2));
+      await tester.tap(person);
+      await Future.delayed(Duration(seconds: 2));
       expect(add, findsOneWidget);
+      await tester.tap(add);
+      await tester.pumpAndSettle();
       await tester.enterText(nameFormField, "Alex");
+      await Future.delayed(Duration(seconds: 2));
       await tester.enterText(phoneFormField, "1110432199");
       await tester.tap(submit);
+      await tester.pumpAndSettle();
+
+      expect(setting, findsOneWidget);
+      await tester.tap(setting);
+      await Future.delayed(Duration(seconds: 2));
+      await tester.tap(edit);
+      await Future.delayed(Duration(seconds: 2));
+      await tester.enterText(pressure, "32.54");
+      await tester.tap(edit);
+      await Future.delayed(Duration(seconds: 2));
+      await tester.drag(factory, Offset(300, 0));
+      await tester.tap(factory3);
+      await tester.pumpAndSettle();
+      await Future.delayed(Duration(seconds: 2));
+
 
     });
   });
