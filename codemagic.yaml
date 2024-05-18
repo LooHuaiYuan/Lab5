@@ -43,3 +43,10 @@ workflows:
       - build/**/outputs/**/mapping.txt
       - flutter_drive.log
 
+    publishing:
+      email:
+        recipients:
+          - loohuaiyuan@gmail.com
+        notify:
+          success: true
+          failure: false
