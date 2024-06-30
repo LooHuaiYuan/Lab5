@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lab5_2/HomeProvider.dart';
+import 'package:lab5_2/Provider/HomeProvider.dart';
 import 'package:provider/provider.dart';
 
 class Invitation extends StatelessWidget {

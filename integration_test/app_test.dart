@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
-import 'package:lab5_2/main.dart' as app;
+import 'package:lab5_2/pages/main.dart' as app;
 
 void main(){
   group('App Test', () {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:lab5_2/HomeProvider.dart';
-import 'package:lab5_2/invitation.dart';
+import 'package:lab5_2/Provider/HomeProvider.dart';
+import 'package:lab5_2/pages/invitation.dart';
 import 'package:provider/provider.dart';
 
 class Person extends StatefulWidget {
